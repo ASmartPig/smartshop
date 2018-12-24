@@ -10,6 +10,29 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>smartshop-web</artifactId>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <!--对dao层的依赖-->
+        <dependency>
+            <groupId>com.itest</groupId>
+            <artifactId>smartshaop-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--对service层的依赖-->
+        <dependency>
+            <groupId>com.itest</groupId>
+            <artifactId>smartshop-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--对controller层的依赖-->
+        <dependency>
+            <groupId>com.itest</groupId>
+            <artifactId>smartshop-controller</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
 
 
 </project>
