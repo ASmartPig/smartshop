@@ -11,5 +11,20 @@
 
     <artifactId>smartshop-service</artifactId>
 
+    <dependencies>
+        <!--添加对dao层模块的依赖-->
+        <dependency>
+            <groupId>com.itest</groupId>
+            <artifactId>smartshop-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--单元测试-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>
