@@ -19,5 +19,6 @@ public class User {
     private Date date_delete;
     private String last_login_ip;
     private int is_delete;
+    private String userName;
 
 }
