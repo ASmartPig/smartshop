@@ -21,6 +21,11 @@
         select * FROM user
     </select>
     <insert id="insertUser" parameterType="com.smart.pojo.User">
-        insert into user(username, password) VALUES (#{userName,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
+        insert into user(username, password,account,id) VALUES (
+        #{userName,jdbcType=VARCHAR},
+        #{password,jdbcType=VARCHAR},
+        #{account,jdbcType=VARCHAR},
+        #{id,jdbcType=VARCHAR}
+        )
     </insert>
 </mapper>

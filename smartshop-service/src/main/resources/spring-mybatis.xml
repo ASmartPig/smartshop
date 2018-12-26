@@ -20,8 +20,8 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close"
           p:driverClassName="com.mysql.jdbc.Driver"
-          p:url="jdbc:mysql://47.105.173.228:3306/userinfo"
-          p:username="roota"
+          p:url="jdbc:mysql://47.105.173.228:3306/userinfo?characterEncoding=UTF-8"
+          p:username="root"
           p:password="root"
           p:maxActive="20"
           p:initialSize="1"
@@ -36,13 +36,14 @@
     <bean id="sqlSessionFactory"
           class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dataSource"
-          p:configLocation="classpath*:mybatis-config.xml"
+          p:configLocation="classpath:mybatis-config.xml"
           p:mapperLocations="classpath*:mapper/*Mapper.xml"/>
 
     <!-- spring与mybatis整合配置，扫描所有dao 和所有mapper文件 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
-          p:basePackage="com.smart.dao"
+          p:basePackage="com.smart.mapper"
           p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
