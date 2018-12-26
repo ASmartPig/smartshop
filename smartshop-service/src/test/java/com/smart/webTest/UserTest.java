@@ -1,4 +1,4 @@
-package com.smart.serciveTest;
+package com.smart.webTest;
 
 import com.google.common.collect.Lists;
 import com.smart.mapper.UserInfoMapper;
@@ -6,10 +6,11 @@ import com.smart.pojo.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.sql.SQLOutput;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -36,6 +37,12 @@ public class UserTest {
                     System.out.println();
                 }
         );
+    }
 
+    @Test
+    public void test() {
+        ApplicationContext act = new ClassPathXmlApplicationContext("classpath:spring-mybatis.xml");
+
+        System.out.println(act.containsBean("userServiceImpl"));
     }
 }

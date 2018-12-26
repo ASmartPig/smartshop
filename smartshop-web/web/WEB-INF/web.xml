@@ -11,8 +11,7 @@
     <!--对业务层的依赖-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring-mybatis.xml
-        </param-value>
+        <param-value>classpath:spring-mybatis.xml</param-value>
     </context-param>
     <!-- 著名 Character Encoding filter -->
     <filter>
@@ -54,7 +53,7 @@
 
     <servlet-mapping>
         <servlet-name>smart</servlet-name>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 

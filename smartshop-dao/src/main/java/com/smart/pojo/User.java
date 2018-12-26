@@ -21,4 +21,14 @@ public class User {
     private int is_delete;
     private String userName;
 
+    public User(String id, String account, String password, String userName) {
+        this.id = id;
+        this.account = account;
+        this.password = password;
+        this.userName = userName;
+    }
+
+    public User(){
+
+    }
 }
