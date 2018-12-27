@@ -20,6 +20,9 @@
     <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String" >
         select * FROM user
     </select>
+    <select id="selectUserByUserAccount" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * FROM user where account = #{account}
+    </select>
     <insert id="insertUser" parameterType="com.smart.pojo.User">
         insert into user(username, password,account,id) VALUES (
         #{userName,jdbcType=VARCHAR},

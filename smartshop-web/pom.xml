@@ -25,10 +25,10 @@
             <artifactId>smartshop-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!--对controller层的依赖-->
+        <!--对common层的依赖-->
         <dependency>
             <groupId>com.itest</groupId>
-            <artifactId>smartshop-controller</artifactId>
+            <artifactId>smartshop-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
