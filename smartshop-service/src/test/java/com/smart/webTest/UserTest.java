@@ -21,28 +21,27 @@ public class UserTest {
 
     @Test
     public void insertUserTest(){
-        User user = new User();
-        user.setId("1");
-        user.setAccount("12345678");
-        user.setUserName("廖泽");
-        user.setPassword("123456");
-        System.out.println(userInfoMapper.insertUser(user));
+//        User user = new User();
+//        user.setId("1");
+//        user.setAccount("12345678");
+//        user.setUserName("廖泽");
+//        user.setPassword("123456");
+//        System.out.println(userInfoMapper.insertUser(user));
     }
 
     @Test
     public void selectUserTest(){
-        List<User> list = Lists.newArrayList();
-        list = userInfoMapper.selectAll();
-        list.forEach(e -> {
-                    System.out.println();
-                }
-        );
+//        List<User> list = Lists.newArrayList();
+//        list = userInfoMapper.selectAll();
+//        list.forEach(e -> {
+//                    System.out.println();
+//                }
+//        );
     }
 
     @Test
     public void test() {
-        ApplicationContext act = new ClassPathXmlApplicationContext("classpath:spring-mybatis.xml");
-
-        System.out.println(act.containsBean("userServiceImpl"));
+//        ApplicationContext act = new ClassPathXmlApplicationContext("classpath:spring-mybatis.xml");
+//        System.out.println(act.containsBean("userServiceImpl"));
     }
 }
