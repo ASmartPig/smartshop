@@ -1,23 +1,17 @@
-package com.smart.webTest;
+package com.smart.serviceTest;
 
-import com.google.common.collect.Lists;
 import com.smart.mapper.UserInfoMapper;
-import com.smart.pojo.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-mybatis.xml")
 public class UserTest {
-    @Autowired
-    private UserInfoMapper userInfoMapper;
+//    @Autowired
+//    private UserInfoMapper userInfoMapper;
 
     @Test
     public void insertUserTest(){
@@ -28,7 +22,6 @@ public class UserTest {
 //        user.setPassword("123456");
 //        System.out.println(userInfoMapper.insertUser(user));
     }
-
     @Test
     public void selectUserTest(){
 //        List<User> list = Lists.newArrayList();

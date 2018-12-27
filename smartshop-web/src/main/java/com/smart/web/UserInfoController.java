@@ -24,7 +24,7 @@ public class UserInfoController {
     private UserService userService;
 
     @RequestMapping("/register")
-    public Result<String> register(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
+    public Result<String> register(@RequestParam(name = "account") String account, @RequestParam(name = "password") String password){
         try {
             if(StringUtils.isEmpty(account) || StringUtils.isEmpty(password)){
                 throw new ServerException(UserOptionServerMsgConstants.USER_PARAM_IS_NULL);
@@ -32,6 +32,8 @@ public class UserInfoController {
             if(userService.isExistAccount(account)){
                 throw new ServerException(UserOptionServerMsgConstants.USER_ACCOUNT_IS_EXIST);
             }
+            User user = new User(account,account,password,account);
+            userService.registerUser(user);
         }catch (Exception e){
             return Result.fail("200",e.getMessage());
         }
