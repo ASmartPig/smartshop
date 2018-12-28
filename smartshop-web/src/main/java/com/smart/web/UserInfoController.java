@@ -1,6 +1,7 @@
 package com.smart.web;
 
 import com.smart.common.exceptions.ServerException;
+import com.smart.common.utils.IDCreateUtil;
 import com.smart.exception.UserOptionServerMsgConstants;
 import com.smart.mock.Result;
 import com.smart.pojo.User;
@@ -13,6 +14,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -24,6 +26,7 @@ public class UserInfoController {
     private UserService userService;
 
     @RequestMapping("/register")
+    @ResponseBody
     public Result<String> register(@RequestParam(name = "account") String account, @RequestParam(name = "password") String password){
         try {
             if(StringUtils.isEmpty(account) || StringUtils.isEmpty(password)){
@@ -32,7 +35,7 @@ public class UserInfoController {
             if(userService.isExistAccount(account)){
                 throw new ServerException(UserOptionServerMsgConstants.USER_ACCOUNT_IS_EXIST);
             }
-            User user = new User(account,account,password,account);
+            User user = new User(IDCreateUtil.createUUID(),account,password,account);
             userService.registerUser(user);
         }catch (Exception e){
             return Result.fail("200",e.getMessage());
@@ -41,6 +44,7 @@ public class UserInfoController {
     }
 
     @RequestMapping("/login")
+    @ResponseBody
     public Result<String> login(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
        try {
            if(StringUtils.isEmpty(account) || StringUtils.isEmpty(password)){

@@ -21,8 +21,7 @@
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
     <!-- 配置视图解析器，将ModelAndView及字符串解析为具体的页面 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/" />
+        <property name="prefix" value="/WEB-INF/content/" />
         <property name="suffix" value=".jsp" />
-        <property name="order" value="2"/>
     </bean>
 </beans>
