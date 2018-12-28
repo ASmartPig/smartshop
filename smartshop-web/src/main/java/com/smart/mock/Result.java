@@ -5,7 +5,7 @@ public class Result<T> {
     private T data = null;
     private String msg = "";
     private String code = "500";
-    private String traceId;
+   // private String traceId;
 
 //    public Result() {
 //        setupTraceId();
@@ -62,9 +62,9 @@ public class Result<T> {
         return msg;
     }
 
-    public String getTraceId() {
-        return traceId;
-    }
+//    public String getTraceId() {
+//        return traceId;
+//    }
 
     public Result<T> setMsg(String msg) {
         this.msg = msg;
