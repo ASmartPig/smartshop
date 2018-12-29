@@ -5,9 +5,9 @@ public class ExceptionBase extends RuntimeException {
     private int httpCode = 500;
     private String errCode;
     private boolean fault;
-    private String traceId;
+   // private String traceId;
     private boolean fromExceptionsMethod;
-    private String appName;
+   // private String appName;
 
     public ExceptionBase() {
         this.errCode = "" + ErrorCodes.UNKNOW_EXCEPTION.getHttpCode();
@@ -91,13 +91,13 @@ public class ExceptionBase extends RuntimeException {
         this.fault = isFault;
     }
 
-    public String getTraceId() {
-        return this.traceId;
-    }
+//    public String getTraceId() {
+//        return this.traceId;
+//    }
 
-    public String getAppName() {
-        return this.appName;
-    }
+//    public String getAppName() {
+//        return this.appName;
+//    }
 
     public boolean isFromExceptionsMethod() {
         return this.fromExceptionsMethod;
