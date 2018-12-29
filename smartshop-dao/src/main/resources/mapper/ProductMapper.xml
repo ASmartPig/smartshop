@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.mapper.ProductMapper">
+    <resultMap id="BaseResultMap" type="com.smart.pojo.Product">
+        <id column="productID" property="productID" jdbcType="VARCHAR" />
+        <result column="productName" property="productName"/>
+        <result column="pictureurlpath" property="pictureurlpath"/>
+        <result column="product_type" property="product_type" />
+        <result column="product_type_id" property="product_type_id" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime"/>
+        <result column="deletetime" property="deletetime" />
+        <result column="is_delete" property="is_delete" />
+    </resultMap>
+    <insert id="insertProduct" parameterType="com.smart.pojo.Product">
+         insert into user(productID, productName,pictureurlpath,product_type,product_type_id,createtime) VALUES (
+        #{productID},
+        #{productName},
+        #{pictureurlpath},
+        #{product_type},
+        #{product_type_id},
+        #{createtime}
+        )
+    </insert>
+
+    <select id="selectAllProduct" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select * FROM product
+    </select>
+
+
+</mapper>

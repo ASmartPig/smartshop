@@ -12,7 +12,4 @@ public interface UserInfoMapper {
 
     User selectUserByUserAccount(@Param("account") String account);
 
-
-
-
 }
