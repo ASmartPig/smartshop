@@ -6,6 +6,9 @@ import com.smart.exception.UserOptionServerMsgConstants;
 import com.smart.mock.Result;
 import com.smart.pojo.User;
 import com.smart.service.UserService;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-
+@Slf4j
 @Controller
 public class UserInfoController {
 
@@ -47,6 +50,7 @@ public class UserInfoController {
     @ResponseBody
     public Result<String> login(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
        try {
+           log.info("login start ...");
            if(StringUtils.isEmpty(account) || StringUtils.isEmpty(password)){
                throw new ServerException(UserOptionServerMsgConstants.USER_PARAM_IS_NULL);
            }

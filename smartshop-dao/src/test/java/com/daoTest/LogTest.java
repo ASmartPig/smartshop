@@ -1,14 +1,14 @@
 package com.daoTest;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+@Slf4j
 public class LogTest {
-    private static Logger logger = LoggerFactory.getLogger(LogTest.class);
+
     @Test
     public void testSl4j(){
-        logger.info("sdfsdf");
-        logger.debug("sdfsdf");
+        log.info("sdfsdf");
+        log.debug("sdfsdf");
     }
 }
