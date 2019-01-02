@@ -33,6 +33,6 @@
         </property>
     </bean>
     <!-- 包含shiro的配置文件 -->
-    <import resource="classpath:beans/application-shiro.xml"/>
+
 
 </beans>

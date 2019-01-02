@@ -6,7 +6,7 @@
     <!-- 配置緩存管理器 -->
     <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
         <!-- 指定 ehcache 的配置文件，下面会给到 -->
-        <property name="cacheManagerConfigFile" value="classpath*:beans/ehcache-shiro.xml"/>
+        <property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>
     </bean>
 
     <!-- 配置进行授权和认证的 Realm，要新增一个java类来实现，下面会有，class=包名.类名，init-methood是初始化的方法 -->
