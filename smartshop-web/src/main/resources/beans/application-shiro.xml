@@ -11,7 +11,7 @@
 
     <!-- 配置进行授权和认证的 Realm，要新增一个java类来实现，下面会有，class=包名.类名，init-methood是初始化的方法 -->
     <bean id="myRealm"
-          class="shiro.MyRealm"
+          class="com.smart.filter.MyRealm"
           init-method="setCredentialMatcher"></bean>
 
     <!-- 配置 Shiro 的 SecurityManager Bean. -->
