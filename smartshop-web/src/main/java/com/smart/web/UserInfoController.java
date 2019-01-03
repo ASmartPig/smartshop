@@ -67,8 +67,10 @@ public class UserInfoController {
               throw new ServerException(UserOptionServerMsgConstants.PASSWORD_IS_INCORRECT);
           }
        }catch (AuthenticationException ae){
+           log.info("AuthenticationException异常信息：",ae);
            return Result.fail("200", JSON.toJSONString(ae));
        } catch (Exception e){
+           log.info("Exception异常信息：",e);
             return Result.fail("200", JSON.toJSONString(e));
        }
         return Result.success("success");
