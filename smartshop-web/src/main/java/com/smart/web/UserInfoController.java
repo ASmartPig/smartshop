@@ -8,7 +8,6 @@ import com.smart.exception.UserOptionServerMsgConstants;
 import com.smart.mock.Result;
 import com.smart.pojo.User;
 import com.smart.service.UserService;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-@Slf4j
 @Controller
 public class UserInfoController {
 
@@ -50,7 +48,6 @@ public class UserInfoController {
     @ResponseBody
     public Result<String> login(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
        try {
-           log.info("login start ...");
            Subject subject = SecurityUtils.getSubject();
            UsernamePasswordToken token = new UsernamePasswordToken(account, password);
            //执行认证操作.
@@ -67,10 +64,8 @@ public class UserInfoController {
               throw new ServerException(UserOptionServerMsgConstants.PASSWORD_IS_INCORRECT);
           }
        }catch (AuthenticationException ae){
-           log.info("AuthenticationException异常信息：",ae);
            return Result.fail("200", JSON.toJSONString(ae));
        } catch (Exception e){
-           log.info("Exception异常信息：",e);
             return Result.fail("200", JSON.toJSONString(e));
        }
         return Result.success("success");
