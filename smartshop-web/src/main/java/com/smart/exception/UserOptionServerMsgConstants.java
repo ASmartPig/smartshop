@@ -15,6 +15,10 @@ public class UserOptionServerMsgConstants extends ServerMsgConstants {
 
     public static final ServerMsg A = new ServerMsg("A", "A");
 
+    public static final ServerMsg B = new ServerMsg("B", "B");
+
+
+
 
 
 
