@@ -91,6 +91,7 @@ public class MyRealm extends AuthorizingRealm {
         int hashIterations = 1024;
         Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
         System.out.println(result);
+        System.out.println("CC");
     }
 }
 
