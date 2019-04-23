@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 定义框架提供的公共工具包及服务 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+    default-autowire="byName" default-lazy-init="true">
+
+
+    <!--<bean id="cookieService"-->
+          <!--class="com.souche.optimus.security.cookie.CookieServiceImpl"-->
+          <!--autowire="byName"/>-->
+
+    <!--<bean id="cacheService" class="com.souche.optimus.cache.RedisCacheServiceImpl">-->
+        <!--<property name="redisTemplate" ref="redisTemplate" />-->
+    <!--</bean>-->
+
+    <!--<bean id="fileStorageRepository" class="com.souche.optimus.common.upload.FileStorageRepositoryAliyunImpl"-->
+          <!--init-method="init"/>-->
+
+
+    <!--&lt;!&ndash; 连接池工厂配置 &ndash;&gt;-->
+    <!--<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"-->
+          <!--p:use-pool="true" p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.password}" />-->
+
+    <!--&lt;!&ndash; redis请求实例配置 &ndash;&gt;-->
+    <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"-->
+          <!--p:connection-factory-ref="jedisConnectionFactory" />-->
+
+    <!--&lt;!&ndash; 具体功能类 &ndash;&gt;-->
+    <!--<bean id="redisValueRepository" class="com.souche.optimus.redis.RedisValueRepository" >-->
+        <!--<property name="redisTemplate" ref="redisTemplate" />-->
+    <!--</bean>-->
+
+    <!--<bean id="redisListRepository" class="com.souche.optimus.redis.RedisListRepository" >-->
+        <!--<property name="redisTemplate" ref="redisTemplate" />-->
+    <!--</bean>-->
+
+    <!--<bean id="redisCountRepository" class="com.souche.optimus.redis.RedisCountRepository" >-->
+        <!--<property name="redisTemplate" ref="redisTemplate" />-->
+    <!--</bean>-->
+
+    <!--<bean id="redisLockRepository" class="com.souche.optimus.redis.RedisLockRepository" >-->
+        <!--<property name="redisTemplate" ref="redisTemplate" />-->
+    <!--</bean>-->
+
+
+</beans>
