@@ -105,15 +105,32 @@
                 </includes>
             </resource>
             <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
+                <directory>src/main/resources/config/beans</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
             </resource>
             <resource>
-                <directory>src/main/config</directory>
-                <filtering>true</filtering>
-                <excludes>
-                    <exclude>test.xml</exclude>
-                </excludes>
+                <directory>src/main/resources/config/properties</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/users/beans</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/users/properties</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
             </resource>
         </resources>
         <plugins>
