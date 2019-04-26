@@ -5,15 +5,6 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
     default-autowire="byName" default-lazy-init="true">
 
-    <bean id="propertyConfigurer"
-        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath*:*.properties</value>
-            </list>
-        </property>
-    </bean>
-
     <import resource="application-optimus-common.xml"/>
     <import resource="application-optimus-datasource.xml"/>
 
