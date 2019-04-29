@@ -13,7 +13,6 @@ import java.util.Objects;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserInfoMapper userInfoMapper;
@@ -30,7 +29,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isExistAccount(String account) {
-        logger.info("进到isExistAccount method中 account:{}",account);
         if(Objects.nonNull((userInfoMapper.selectUserByUserAccount(account)))){
             return true;
         }

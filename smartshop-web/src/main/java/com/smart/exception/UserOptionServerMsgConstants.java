@@ -12,4 +12,8 @@ public class UserOptionServerMsgConstants extends ServerMsgConstants {
 
     public static final ServerMsg PASSWORD_IS_INCORRECT = new ServerMsg("USER_ACCOUNT_IS_NOT_EXIST", "密码不正确");
 
+    public static final ServerMsg A = new ServerMsg("A", "A");
+
+    public static final ServerMsg B = new ServerMsg("B", "B");
+
 }
