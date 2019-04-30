@@ -3,7 +3,7 @@
 <configuration>
     <property name="LOG_DIR" value="${catalina.base}/logs"/>
 
-    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%traceId] [%thread] [%C:%L] %-5level  %msg%n"/>
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS}  [%thread] [%C:%L] %-5level  %msg%n"/>
 
     <!-- Send debug messages to System.out -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -16,16 +16,17 @@
     <!-- Send debug messages to a file -->
     <appender name="FILE"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/sql_info.log</file>
+        <FileNamePattern>${LOG_DIR}/tomcat.%d{yyyy-MM-dd}.log</FileNamePattern>
+        <file>${LOG_DIR}/tomcat.%d{yyyy-MM-dd}.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>${pattern}</Pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <FileNamePattern>${LOG_DIR}/sql_info_%d{yyyy-MM-dd}.log.%i.gz</FileNamePattern>
+            <FileNamePattern>${LOG_DIR}/tomcat.%d{yyyy-MM-dd}.log.%i.gz</FileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>20MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>10</maxHistory>
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
             <MaxFileSize>2MB</MaxFileSize>
@@ -36,32 +37,6 @@
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
-
-    <appender name="SQL_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/sql_error.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_DIR}/sql_error_%d{yyyy-MM-dd}.log.%i.gz</fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>20MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>10</maxHistory>
-        </rollingPolicy>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <Pattern>${pattern}</Pattern>
-        </encoder>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>ERROR</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-    </appender>
-
-
-    <logger name="java.sql" level="info" additivity="false">
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="SQL_INFO"/>
-        <appender-ref ref="SQL_ERROR"/>
-    </logger>
 
     <root level="info">
         <appender-ref ref="STDOUT"/>
