@@ -7,6 +7,7 @@ import com.smart.exception.UserOptionServerMsgConstants;
 import com.smart.mock.Result;
 import com.smart.pojo.User;
 import com.smart.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
+@Slf4j
 public class UserInfoController {
 
     @Autowired
@@ -25,6 +27,7 @@ public class UserInfoController {
     @RequestMapping("/register")
     @ResponseBody
     public Result<String> register(@RequestParam(name = "account") String account, @RequestParam(name = "password") String password){
+        log.info("register request start ... account:{},password:{}",account,password);
         try {
             if(StringUtils.isEmpty(account) || StringUtils.isEmpty(password)){
                 throw new ServerException(UserOptionServerMsgConstants.USER_PARAM_IS_NULL);
@@ -48,6 +51,7 @@ public class UserInfoController {
     @RequestMapping("/login")
     @ResponseBody
     public Result<String> login(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
+        log.info("register request start ... account:{},password:{}",account,password);
        try {
            if(StringUtils.isEmpty(account) || StringUtils.isEmpty(password)){
                throw new ServerException(UserOptionServerMsgConstants.USER_PARAM_IS_NULL);
