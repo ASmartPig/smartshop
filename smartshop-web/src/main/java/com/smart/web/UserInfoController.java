@@ -7,6 +7,8 @@ import com.smart.exception.UserOptionServerMsgConstants;
 import com.smart.mock.Result;
 import com.smart.pojo.User;
 import com.smart.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +18,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+@Api(description = "用户登陆接口")
 @Controller
 @Slf4j
+@RequestMapping("/userInfo")
 public class UserInfoController {
 
     @Autowired
     private UserService userService;
 
+    @ApiOperation(value = "用户注册（POST)" ,notes = "用户注册 ： http method is post",httpMethod = "POST")
     @RequestMapping("/register")
     @ResponseBody
     public Result<String> register(@RequestParam(name = "account") String account, @RequestParam(name = "password") String password){
@@ -48,6 +52,7 @@ public class UserInfoController {
         return Result.success("success");
     }
 
+    @ApiOperation(value = "用户登陆（POST)" ,notes = "用户登陆 ： http method is post",httpMethod = "POST")
     @RequestMapping("/login")
     @ResponseBody
     public Result<String> login(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
