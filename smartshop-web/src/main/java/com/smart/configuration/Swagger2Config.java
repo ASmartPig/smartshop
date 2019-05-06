@@ -3,6 +3,7 @@ package com.smart.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -18,6 +19,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @Description
  * @Author 2019/5/6 下午3:54
  **/
+
+//@WebAppConfiguration junit 单元测试加载配置
 @Configuration  //让Spring来加载该类配置
 @EnableWebMvc   //启用Mvc，非springboot框架需要引入注解@EnableWebMvc
 @EnableSwagger2
