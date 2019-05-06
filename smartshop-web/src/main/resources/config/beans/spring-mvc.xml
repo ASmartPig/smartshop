@@ -9,11 +9,20 @@
        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
     <!--扫描web包应用Spring注解-->
     <context:component-scan base-package="com.smart.web"/>
     <context:component-scan base-package="com.smart.service.serviceImpl"/>
     <!--启动注解-->
     <mvc:annotation-driven/>
+
+    <!-- swagger -->
+    <bean class="com.smart.configuration.Swagger2Config"></bean>
+    <mvc:default-servlet-handler/>
+    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+
 
     <!--设置静态资源放行规则
     <mvc:resources mapping="/css/**" location="/css/"/>  -->

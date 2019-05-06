@@ -13,5 +13,4 @@
     </bean>
     <import resource="classpath:application-optimus.xml"/>
     <import resource="classpath:application.xml"></import>
-
 </beans>

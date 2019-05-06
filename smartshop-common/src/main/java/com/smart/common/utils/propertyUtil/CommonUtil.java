@@ -18,9 +18,9 @@ import java.util.Random;
 public class CommonUtil {
     private static Random rand = new Random();
     private final static Logger logger = LoggerFactory.getLogger(CommonUtil.class);
-    private static char CHARACTERS[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C',
+    private static char CHARACTERS[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C',
             'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
-            'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
     /**
      * 对obj里面的Integer、Long、Float、Double类型字段中，为null值的成员，置为0
@@ -185,8 +185,8 @@ public class CommonUtil {
         sb.append(request.getRequestURI());
 
         Map<String, String> paramMap = Maps.newTreeMap();
-        if(fullParam) {
-            for(Object key : request.getParameterMap().keySet()) {
+        if (fullParam) {
+            for (Object key : request.getParameterMap().keySet()) {
                 String k = key.toString();
                 String value = request.getParameter((String) key);
                 paramMap.put(k, value);
@@ -195,9 +195,9 @@ public class CommonUtil {
             String query = request.getQueryString();
             if (StringUtil.isNotEmpty(query)) {
                 String[] kvs = query.split("&");
-                for(String kv : kvs) {
+                for (String kv : kvs) {
                     String[] arr = kv.split("=", 2);
-                    if(arr.length != 2) {
+                    if (arr.length != 2) {
                         continue;
                     }
                     paramMap.put(arr[0], arr[1]);
@@ -215,7 +215,7 @@ public class CommonUtil {
             }
             String value = request.getParameter((String) key);
             // 加上脱敏信息
-           // sb.append(key).append("=").append(AntiSensitiveUtil.judgeAndAntiSensitiveValue(k, value));
+            // sb.append(key).append("=").append(AntiSensitiveUtil.judgeAndAntiSensitiveValue(k, value));
         }
 
         return sb.toString();
@@ -269,12 +269,9 @@ public class CommonUtil {
     /**
      * 在字符串头部填充字符
      *
-     * @param str
-     *            要填充的字符串
-     * @param num
-     *            长度
-     * @param c
-     *            要填充的字符
+     * @param str 要填充的字符串
+     * @param num 长度
+     * @param c   要填充的字符
      * @return
      */
     public static String fillStringHead(String str, int num, char c) {
