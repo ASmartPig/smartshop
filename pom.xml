@@ -33,9 +33,19 @@
         <slf4j.version>1.7.25</slf4j.version>
         <fastjson.version>1.2.54</fastjson.version>
         <lombok.version>1.18.4</lombok.version>
+        <swagger2.version>2.6.1</swagger2.version>
     </properties>
 
     <dependencies>
+        <!--swagger2-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
         <!--slf4j-logback-->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -387,6 +397,17 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
+            </dependency>
+            <!--swagger2-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
