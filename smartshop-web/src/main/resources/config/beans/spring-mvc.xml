@@ -12,7 +12,7 @@
 
 
     <!--扫描web包应用Spring注解-->
-    <context:component-scan base-package="com.smart.web"/>
+    <context:component-scan base-package="com.smart.*"/>
     <context:component-scan base-package="com.smart.service.serviceImpl"/>
     <!--启动注解-->
     <mvc:annotation-driven/>
