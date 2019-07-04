@@ -19,7 +19,6 @@ import javafx.animation.Timeline;
 import java.util.Arrays;
 import java.util.List;
 
-import static sun.misc.JarIndex.INDEX_NAME;
 
 /**
  * @Description
