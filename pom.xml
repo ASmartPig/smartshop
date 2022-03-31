@@ -20,7 +20,7 @@
     <properties>
         <!--添加依赖-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.3.17.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <mysql.connector.version>5.1.30</mysql.connector.version>
         <mybatis.version>3.2.7</mybatis.version>
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
