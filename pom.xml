@@ -28,7 +28,7 @@
         <jstl.version>1.2</jstl.version>
         <aspectj.version>1.6.12</aspectj.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
-        <shiro.version>1.2.2</shiro.version>
+        <shiro.version>1.10.0</shiro.version>
     </properties>
 
     <dependencies>
